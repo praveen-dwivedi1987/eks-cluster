@@ -1,0 +1,13 @@
+Update kube-config file for eks cluster
+
+aws eks update-kubeconfig --region us-east-1 --name my-cluster
+
+Amazon EBS CSI Driver is required for auto ebs creation
+to use this it is mendetory to have OIDC for authentication and authourization.
+
+Vault service account
+
+server: 
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::059453199592:role/vault-prod-us-west-2_role
